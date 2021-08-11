@@ -1,7 +1,7 @@
 <?php
 
 // Replace this with your own email address
-$to = 'capstonedesignraspberrypi@gmail.com';
+$to = 'richnesslife98@gmail.com';
 
 function url(){
   return sprintf(
@@ -19,7 +19,7 @@ if($_POST) {
    $contact_message = trim(stripslashes($_POST['message']));
 
    
-   if ($subject == '') { $subject = "Contact Form Submission"; }
+  if ($subject == '') { $subject = "Contact Form Submission"; }
 
    // Set Message
    $message .= "Email from: " . $name . "<br />";
@@ -32,17 +32,17 @@ if($_POST) {
    $from =  $name . " <" . $email . ">";
 
    // Email Headers
-   $headers = "From: " . $from . "\r\n";
-   $headers .= "Reply-To: ". $email . "\r\n";
-   $headers .= "MIME-Version: 1.0\r\n";
-   $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+  $headers = "From: " . $from . "\r\n";
+  $headers .= "Reply-To: ". $email . "\r\n";
+  $headers .= "MIME-Version: 1.0\r\n";
+  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
    ini_set("sendmail_from", $to); // for windows server
    $mail = mail($to, $subject, $message, $headers);
 
-   if ($mail) { echo "OK"; }
+  if ($mail) { echo "OK"; }
    else { echo "Something went wrong. Please try again."; }
 
 }
-
+require_once "contact.html";
 ?>
