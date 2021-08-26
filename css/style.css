@@ -54,6 +54,9 @@ div.navmenu{
 	background-color: hsla(45, 90%, 61%, 0.43);
 	box-shadow: 0px 0px 5px 3px #ffbc45;
 }
+div.float {
+  margin-right: 8px;
+}
 a.mylinks{
 	text-decoration: none;
 	color: rgba(136, 168, 131, 1);
