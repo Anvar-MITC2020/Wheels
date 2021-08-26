@@ -194,7 +194,7 @@
   right: 0;
   color: black;
   width: 80px;
-  background-color: #557c3e;
+  background-color: hsla(45, 90%, 61%, 0.50);
   text-align: center;
   border-radius: 25px 0px 0px 0px;
 }
