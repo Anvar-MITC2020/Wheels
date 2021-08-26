@@ -245,6 +245,9 @@ h3.menu-item-title {
     background: url('../images/BUS.jpg') no-repeat;
     height: 432px;
   }
+  div.float {
+  margin-right: 8px;
+  }
   /* End Home Page */
 }
 
