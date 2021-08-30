@@ -8333,3 +8333,12 @@ textarea.form-control {
 /*.wrapper:hover {
   box-shadow: 0 0 15px 0px #3F0C1F;
 }*/
+.category-tile > span {
+  background-color: orange;
+  opacity: .5;
+  color: hsla(0, 45%, 5%, 1);
+}
+.menu-item-photo > div {
+  background-color: hsla(45, 90%, 61%, 0.53);
+}
+
