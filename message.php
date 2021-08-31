@@ -1,48 +1,27 @@
 <?php
 
-// Replace this with your own email address
-$to = 'richnesslife98@gmail.com';
+if(isset($_POST['submit'])){
+$to = "richnesslife98@gmail.com"; // Здесь нужно написать e-mail, куда будут приходить письма
+$email = $_POST['email']; // this is the sender's Email address
+$name = $_POST['name'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+$subject2 = "Copy of your form submission";
+$Message = $name . " оставил сообщение:" . "\n\n" . $_POST['subject'] . "\t\t" . $_POST['message'];
+$message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['subject'] . "\t\t" . $_POST['message'];
 
-function url(){
-  return sprintf(
-    "%s://%s",
-    isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
-    $_SERVER['SERVER_NAME']
-  );
-}
+$headers = "From:" . $email;
+$headers2 = "From:" . $to;
 
-if($_POST) {
-
-   $name = trim(stripslashes($_POST['name']));
-   $email = trim(stripslashes($_POST['email']));
-   $subject = trim(stripslashes($_POST['subject']));
-   $contact_message = trim(stripslashes($_POST['message']));
-
-   
-  if ($subject == '') { $subject = "Contact Form Submission"; }
-
-   // Set Message
-   $message .= "Email from: " . $name . "<br />";
-   $message .= "Email address: " . $email . "<br />";
-   $message .= "Message: <br />";
-   $message .= nl2br($contact_message);
-   $message .= "<br /> ----- <br /> This email was sent from your site " . url() . " contact form. <br />";
-
-   // Set From: header
-   $from =  $name . " <" . $email . ">";
-
-   // Email Headers
-  $headers = "From: " . $from . "\r\n";
-  $headers .= "Reply-To: ". $email . "\r\n";
-  $headers .= "MIME-Version: 1.0\r\n";
-  $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-   ini_set("sendmail_from", $to); // for windows server
-   $mail = mail($to, $subject, $message, $headers);
-
-  if ($mail) { echo "OK"; }
-   else { echo "Something went wrong. Please try again."; }
+mail($to, $name , $subject, $message, $headers);
+// mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender - Отключено!
+echo "Сообщение отправлено. Спасибо Вам " . $name . ", мы скоро свяжемся с Вами.";
+echo "<br /><br /><a href='https://github.com/Anvar-MITC2020/Wheels/blob/master/contact.html'>Вернуться на сайт.</a>";
 
 }
-require_once "contact.html";
+
 ?>
+<script language="JavaScript" type="text/javascript">
+function changeurl(){eval(self.location="https://github.com/Anvar-MITC2020/Wheels/blob/master/contact.html");}
+window.setTimeout("changeurl();",3000);
+</script>
