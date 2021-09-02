@@ -20,10 +20,10 @@
 					}
 				},
 				messages: {
-					name: "Please enter your name",
-					subject: "Please enter your subject",
-					email: "Please enter a valid email address",
-					message: "Please enter a message"
+					name: "Ism Familiya Sharif to'g'ri kiriting!",
+					subject: "Pochta manzili to'g'ri kiriting!",
+					email: "Murojaat mavzusi to'g'ri kiriting!",
+					message: "Xabar qoldirish to'g'ri kiriting!"
 				},
 				/* submit via ajax */
 				
@@ -33,7 +33,7 @@
 
 					$.ajax({   	
 				      type: "POST",
-				      url: "php/sendEmail.php",
+				      url: "message.php",
 				      data: $(form).serialize(),
 
 				      beforeSend: function() { 
