@@ -70,7 +70,7 @@
 			            }
 				      },
 				      error: function() {
-				      	$('#form-message-warning').html("Something went wrong. Please try again.");
+				      	$('#form-message-warning').html("Tizimda xatolik ketdi. Iltimos qayta urinib ko'ring.");
 				         $('#form-message-warning').fadeIn();
 				         $submit.css('display', 'none');
 				      }
